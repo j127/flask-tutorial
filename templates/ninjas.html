@@ -1,24 +1,12 @@
 {% extends "layout.html" %}
   
 {% block content %}
-      <h2>Employees</h2>
+      <h2>Ninjas</h2>
       <p>All data below is randomly generated and fictitous.</p>
-      <script id="ninjas-template" type="text/template">
-          <table>
-              <caption>Ninjas</caption>
-              <thead>
-                  <th>Ninja</th><th>Telephone</th>
-              </thead>
-              <tbody>
-                  {{#ninja}}
-                      <tr><td>{{name}}</td><td>{{phone}}</td></tr>
-                  {{/ninja}}
-              </tbody>
-          </table>
-      </script>
+      <p class="warning">Warning: This page is secret.</p>
       <noscript>You need to enable JavaScript to view this webpage.</noscript>
       <div id="ninjas-output"></div>
 {% endblock %}
 {% block scripts %}
-<script src=""></script>
+        <script src="{{ url_for('static', filename='js/ninjas.js') }}"></script>
 {% endblock %}
