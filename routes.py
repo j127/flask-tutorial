@@ -1,6 +1,6 @@
 import os
 from faker import Faker
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 # from flask.ext.restful import Api, Resource
 
 app = Flask(__name__)
@@ -23,15 +23,18 @@ def ninjas():
 @app.route('/api/ninjas.json', methods = ['GET'])
 def get_ninjas():
     f = Faker()
-    name = f.name()
-    phone = f.phonenumber()
-    city = f.city()
+    ninjas = []
+    for ninja in range(5):
+        name = f.name()
+        phone = f.phonenumber()
+        city = f.city()
 
-    ninjas = {
-            'name':name,
-            'phone':phone,
-            'city':city
-            }
+        next_ninja = {
+                'name':name,
+                'phone':phone,
+                'city':city
+                }
+        ninjas.append(next_ninja)
     return jsonify( { 'ninjas': ninjas } )
 
 if __name__ == "__main__":
