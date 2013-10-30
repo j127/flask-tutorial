@@ -1,7 +1,7 @@
 import os
 from faker import Faker
 from flask import Flask, render_template
-from flask.ext.restful import Api, Resource
+# from flask.ext.restful import Api, Resource
 
 app = Flask(__name__)
 app.config.update(
