@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Python Flask</title>   
+        <title>hidden-dawn-4325</title>   
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
     </head>
     <body>
         <header>
             <div class="container">
-                <h1 class="logo">Flask App</h1>
+                <h1 class="logo">Hidden Dawn 4325</h1>
                 <strong><nav>
                         <ul class="menu">
                             <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -22,8 +23,9 @@
             {% endblock %}
         </div>
 
-{{ url_for('static', filename='css/main.css') }}
-{{ url_for('static', filename='css/main.css') }}
+        <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/mustache.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
             {% block scripts %}
             {% endblock %}
     </body>

@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template
 
-app = Flask(flaskzilla)
+app = Flask(__name__)
 app.config.update(
         DEBUG = True,
 )
@@ -17,6 +17,10 @@ def about():
 @app.route("/ninjas")
 def ninjas():
     return render_template("ninjas.html")
+
+@app.route('/ninjas/api/list', methods = ['GET'])
+def get_ninjas():
+    return jsonify( { 'ninjas': ninjas } )
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
