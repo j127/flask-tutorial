@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+  
+{% block content %}
+      <h2>Employees</h2>
+      <p>All data below is randomly generated and fictitous.</p>
+      <script id="employee-template" type="text/template">
+          <table>
+              <caption>Employees</caption>
+              <thead>
+                  <th>Employee</th><th>Telephone</th>
+              </thead>
+              <tbody>
+                  {{#employees}}
+                      <tr><td>{{name}}</td><td>{{phone}}</td></tr>
+                  {{/employees}}
+              </tbody>
+          </table>
+      </script>
+      <noscript>You need to enable JavaScript to view this webpage.</noscript>
+      <div id="employee-output"></div>
+{% endblock %}
