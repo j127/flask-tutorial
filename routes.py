@@ -28,11 +28,15 @@ def get_ninjas():
         name = f.name()
         phone = f.phonenumber()
         city = f.city()
+        wanted_in = []
+        for state in range(3):
+            wanted_in.append(f.state())
 
         next_ninja = {
                 'name':name,
                 'phone':phone,
-                'city':city
+                'city':city,
+                'wantedIn': wanted_in
                 }
         ninjas.append(next_ninja)
     return jsonify( { 'ninjas': ninjas } )
